@@ -1,9 +1,10 @@
-﻿import factory
+import factory
 from service.models import Product, Category
 
 class ProductFactory(factory.Factory):
     class Meta:
         model = Product
+
     id = factory.Sequence(lambda n: n)
     name = factory.Faker("name")
     description = factory.Faker("text")
