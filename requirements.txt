@@ -1,0 +1,8 @@
+﻿flask
+flask-sqlalchemy
+factory-boy
+nose
+flake8
+requests
+selenium
+behave
