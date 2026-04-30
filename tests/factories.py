@@ -1,5 +1,4 @@
 ﻿import factory
-from factory import fuzz
 from service.models import Product, Category
 
 class ProductFactory(factory.Factory):
@@ -8,7 +7,8 @@ class ProductFactory(factory.Factory):
     id = factory.Sequence(lambda n: n)
     name = factory.Faker("name")
     description = factory.Faker("text")
-    price = fuzz.FuzzyDecimal(0.5, 2000.0, 2)
+    # استبدال fuzz بـ Faker لتوليد أرقام عشوائية متوافقة
+    price = factory.Faker("pydecimal", left_digits=4, right_digits=2, positive=True)
     available = factory.Faker("boolean")
     category = factory.Iterator([
         Category.CLOTHS, Category.FOOD, Category.HOUSEWARES, 
