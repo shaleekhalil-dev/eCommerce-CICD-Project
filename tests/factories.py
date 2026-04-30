@@ -7,7 +7,7 @@ class ProductFactory(factory.Factory):
     id = factory.Sequence(lambda n: n)
     name = factory.Faker("name")
     description = factory.Faker("text")
-    # استخدام Faker لتوليد أسعار عشوائية لضمان التوافق
+    # استخدام Faker لتوليد أسعار عشوائية متوافقة مع الإصدارات الحديثة
     price = factory.Faker("pydecimal", left_digits=4, right_digits=2, positive=True)
     available = factory.Faker("boolean")
     category = factory.Iterator([
