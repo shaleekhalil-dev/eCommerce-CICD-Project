@@ -1,7 +1,7 @@
 ﻿import unittest
 from service.models import Product, Category, db
 from tests.factories import ProductFactory
-from . import app
+from service import app
 
 class TestProductModel(unittest.TestCase):
     def test_read_a_product(self):
